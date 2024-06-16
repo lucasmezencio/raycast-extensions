@@ -3,7 +3,7 @@ import { usePromise } from "@raycast/utils";
 import os from "node:os";
 
 import { Actions } from "../components/Actions";
-import { calculateDiskStorage, getOSInfo, getSerialNumber } from "./SystemUtils";
+import { calculateDiskStorage, getGpuInfo, getOSInfo, getSerialNumber } from "./SystemUtils";
 
 export default function SystemInfo() {
   return (
@@ -19,11 +19,13 @@ export default function SystemInfo() {
 
 function SystemInfoDetail() {
   const { data, isLoading } = usePromise(async () => {
+    const gpuInfo = await getGpuInfo();
+    const osInfo = await getOSInfo();
     const serialNumber = await getSerialNumber();
     const storage = await calculateDiskStorage();
-    const osInfo = await getOSInfo();
 
     return {
+      gpuInfo,
       osInfo,
       serialNumber,
       storage,
@@ -38,6 +40,7 @@ function SystemInfoDetail() {
           <List.Item.Detail.Metadata.Label title="Hardware Specifications" />
           <List.Item.Detail.Metadata.Label title="Hostname" text={os.hostname().replace(/\.(local|lan)/g, "")} />
           <List.Item.Detail.Metadata.Label title="Chip" text={os.cpus()[0].model} />
+          <List.Item.Detail.Metadata.Label title="GPU" text={data?.gpuInfo ?? "-"} />
           <List.Item.Detail.Metadata.Label title="Serial Number" text={data?.serialNumber || "-"} />
           <List.Item.Detail.Metadata.Label
             title="macOS"
