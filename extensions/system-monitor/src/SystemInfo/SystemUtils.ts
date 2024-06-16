@@ -1,6 +1,6 @@
 import si from "systeminformation";
-import { DiskInterface } from "../Interfaces";
-import { execp } from "../utils";
+import { DiskInterface } from "@SystemMonitor/Interfaces";
+import { execp } from "@SystemMonitor/utils";
 
 export async function calculateDiskStorage() {
   const disks = await si.fsSize();
@@ -36,4 +36,12 @@ export async function getOSInfo() {
     codename,
     release,
   };
+}
+
+export async function getGpuInfo() {
+  const output = await execp("/usr/sbin/system_profiler -json SPDisplaysDataType");
+  const jsonOutput = JSON.parse(output).SPDisplaysDataType[0];
+  const cores = jsonOutput.sppci_cores ? ` (${jsonOutput.sppci_cores} cores)` : "";
+
+  return `${jsonOutput.sppci_model}${cores}`;
 }
