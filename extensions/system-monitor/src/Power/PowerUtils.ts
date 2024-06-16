@@ -4,10 +4,10 @@ import { convertMsToTime, execp } from "../utils";
 
 export const getBatteryData = async (): Promise<BatteryDataInterface> => {
   const smartBatteryOutput = await execp("/usr/sbin/ioreg -arn AppleSmartBattery");
-  const systemProfilerOutput = await execp(
-    `/usr/sbin/system_profiler SPPowerDataType | grep -e 'Condition' -e 'Maximum Capacity'| awk '{print $NF}'`,
-  );
   const smartBattery = (plist.parse(smartBatteryOutput) as PlistArray)[0] as PlistObject;
+  const systemProfilerOutput = await execp(
+    "/usr/sbin/system_profiler SPPowerDataType | grep -e 'Condition' -e 'Maximum Capacity'| awk '{print $NF}'",
+  );
   const [condition, maximumCapacity] = systemProfilerOutput.split("\n");
 
   return {
