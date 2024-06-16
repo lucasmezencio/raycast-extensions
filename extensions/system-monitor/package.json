@@ -24,22 +24,22 @@
     }
   ],
   "dependencies": {
-    "@raycast/api": "^1.70.3",
-    "@raycast/utils": "^1.13.6",
+    "@raycast/api": "^1.73.2",
+    "@raycast/utils": "^1.15.0",
     "os-utils": "0.0.14",
     "plist": "^3.1.0",
-    "systeminformation": "^5.22.7",
+    "systeminformation": "^5.22.8",
     "usehooks-ts": "^3.1.0"
   },
   "devDependencies": {
-    "@raycast/eslint-config": "^1.0.6",
-    "@types/node": "20.8.10",
+    "@raycast/eslint-config": "^1.0.8",
+    "@types/node": "20.12.11",
     "@types/os-utils": "0.0.4",
     "@types/plist": "^3.0.5",
-    "@types/react": "18.2.27",
+    "@types/react": "18.3.1",
     "eslint": "^8.51.0",
-    "prettier": "^3.0.3",
-    "typescript": "^5.2.2"
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5"
   },
   "scripts": {
     "build": "ray build -e dist",
