@@ -3,9 +3,9 @@ import { Icon, List } from "@raycast/api";
 import { usePromise } from "@raycast/utils";
 import { useInterval } from "usehooks-ts";
 
-import { Actions } from "../components/Actions";
-import { formatBytes, isObjectEmpty } from "../utils";
-import { getNetworkData, getTopProcess } from "./NetworkUtils";
+import { Actions } from "@SystemMonitor/components/Actions";
+import { formatBytes, isObjectEmpty } from "@SystemMonitor/utils";
+import { getNetworkData, getTopProcess } from "@SystemMonitor/Network//NetworkUtils";
 
 export default function NetworkMonitor() {
   const prevProcess = useRef<{ [key: string]: number[] }>({});

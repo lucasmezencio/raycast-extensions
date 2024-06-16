@@ -4,8 +4,8 @@ import { loadavg } from "os";
 import { useInterval } from "usehooks-ts";
 import { usePromise } from "@raycast/utils";
 
-import { Actions } from "../components/Actions";
-import { getTopCpuProcess, getRelativeTime } from "./CpuUtils";
+import { Actions } from "@SystemMonitor/components/Actions";
+import { getTopCpuProcess, getRelativeTime } from "@SystemMonitor/Cpu/CpuUtils";
 
 export default function CpuMonitor() {
   const { revalidate, data: cpu } = usePromise(() => {

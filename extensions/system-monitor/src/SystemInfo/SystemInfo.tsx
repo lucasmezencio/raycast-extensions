@@ -2,8 +2,8 @@ import { Icon, List } from "@raycast/api";
 import { usePromise } from "@raycast/utils";
 import os from "node:os";
 
-import { Actions } from "../components/Actions";
-import { calculateDiskStorage, getGpuInfo, getOSInfo, getSerialNumber } from "./SystemUtils";
+import { Actions } from "@SystemMonitor/components/Actions";
+import { calculateDiskStorage, getGpuInfo, getOSInfo, getSerialNumber } from "@SystemMonitor/SystemInfo/SystemUtils";
 
 export default function SystemInfo() {
   return (

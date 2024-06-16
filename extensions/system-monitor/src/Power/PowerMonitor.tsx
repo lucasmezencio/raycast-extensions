@@ -2,10 +2,10 @@ import { Icon, List } from "@raycast/api";
 import { useInterval } from "usehooks-ts";
 import { usePromise } from "@raycast/utils";
 
-import { Actions } from "../components/Actions";
-import { BatteryDataInterface } from "../Interfaces";
-import { convertMinutesToHours } from "../utils";
-import { getBatteryData, getTimeOnBattery } from "./PowerUtils";
+import { Actions } from "@SystemMonitor/components/Actions";
+import { BatteryDataInterface } from "@SystemMonitor/Interfaces";
+import { convertMinutesToHours } from "@SystemMonitor/utils";
+import { getBatteryData, getTimeOnBattery } from "@SystemMonitor/Power/PowerUtils";
 
 export default function PowerMonitor() {
   const { revalidate, data } = usePromise(async () => {

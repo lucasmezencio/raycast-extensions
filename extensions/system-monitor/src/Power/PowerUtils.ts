@@ -1,6 +1,6 @@
 import plist, { PlistArray, PlistObject } from "plist";
-import { BatteryDataInterface } from "../Interfaces";
-import { convertMsToTime, execp } from "../utils";
+import { BatteryDataInterface } from "@SystemMonitor/Interfaces";
+import { convertMsToTime, execp } from "@SystemMonitor/utils";
 
 export const getBatteryData = async (): Promise<BatteryDataInterface> => {
   const smartBatteryOutput = await execp("/usr/sbin/ioreg -arn AppleSmartBattery");

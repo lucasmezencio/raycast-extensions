@@ -1,4 +1,4 @@
-import { execp } from "../utils";
+import { execp } from "@SystemMonitor/utils";
 
 const UNITS = {
   year: 24 * 60 * 60 * 365,

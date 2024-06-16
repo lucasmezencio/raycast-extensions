@@ -1,4 +1,4 @@
-import { execp } from "../utils";
+import { execp } from "@SystemMonitor/utils";
 
 export const getNetworkData = async (): Promise<{ [key: string]: number[] }> => {
   const nettopOptions = [

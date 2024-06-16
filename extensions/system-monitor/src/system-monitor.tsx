@@ -1,9 +1,9 @@
 import { List, getPreferenceValues } from "@raycast/api";
-import SystemInfo from "./SystemInfo/SystemInfo";
-import CpuMonitor from "./Cpu/CpuMonitor";
-import MemoryMonitor from "./Memory/MemoryMonitor";
-import NetworkMonitor from "./Network/NetworkMonitor";
-import PowerMonitor from "./Power/PowerMonitor";
+import CpuMonitor from "@SystemMonitor/Cpu/CpuMonitor";
+import MemoryMonitor from "@SystemMonitor/Memory/MemoryMonitor";
+import NetworkMonitor from "@SystemMonitor/Network/NetworkMonitor";
+import PowerMonitor from "@SystemMonitor/Power/PowerMonitor";
+import SystemInfo from "@SystemMonitor/SystemInfo/SystemInfo";
 
 const defaultView = getPreferenceValues<ExtensionPreferences>().defaultView;
 

@@ -2,8 +2,8 @@ import { Icon, List } from "@raycast/api";
 import { useInterval } from "usehooks-ts";
 import { usePromise } from "@raycast/utils";
 
-import { Actions } from "../components/Actions";
-import { getTopRamProcess, getMemoryUsage } from "./MemoryUtils";
+import { Actions } from "@SystemMonitor/components/Actions";
+import { getTopRamProcess, getMemoryUsage } from "@SystemMonitor/Memory/MemoryUtils";
 
 export default function MemoryMonitor() {
   const { data, revalidate } = usePromise(async () => {

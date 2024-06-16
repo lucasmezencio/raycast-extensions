@@ -1,5 +1,5 @@
 import { MemoryInterface } from "../Interfaces";
-import { execp } from "../utils";
+import { execp } from "@SystemMonitor/utils";
 
 export const getTopRamProcess = async (): Promise<string[][]> => {
   const output = await execp("/usr/bin/top -l 1 -o mem -n 5 -stats command,mem");
